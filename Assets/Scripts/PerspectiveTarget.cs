@@ -54,7 +54,7 @@ public class PerspectiveTarget : MonoBehaviour
             }
 
             //if (other.transform.rotation == TargetAngle)
-            if (dot >= 0.90)
+            if (dot >= 0.985)
             {
                 hit = true;
                 //Debug.Log("Hit");
