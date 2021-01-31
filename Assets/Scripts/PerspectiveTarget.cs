@@ -41,7 +41,7 @@ public class PerspectiveTarget : MonoBehaviour
             {
                 return;
             }
-            float dot = Vector3.Dot(this.transform.forward, other.transform.forward);
+            float dot = Vector3.Dot(this.transform.forward, other.transform.Find("Main Camera").forward);
             //Debug.Log("Dot: " + dot);
 
             //if (other.transform.rotation == TargetAngle)
