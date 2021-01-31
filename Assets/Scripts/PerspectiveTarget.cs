@@ -28,25 +28,35 @@ public class PerspectiveTarget : MonoBehaviour
         CheckAngle(other);
     }
 
+    bool hit = false;
+
     private void CheckAngle(Collider other)
     {
         //Debug.Log(other.transform.rotation);
         if (other.name.Equals("Player"))
         {
             Debug.DrawLine(other.transform.position, other.transform.position + (other.transform.forward * 5), Color.blue);
+            Debug.DrawLine(this.transform.position, other.transform.position, Color.green);
 
+            //Vector3 t = new Vector3(this.transform.position.x, 0, this.transform.position.z);
+            //Vector3 o = new Vector3(other.transform.position.x, 0, other.transform.position.z);
             float distance = (this.transform.position - other.transform.position).magnitude;
-            //Debug.Log("Distance: " + distance);
-            if (distance > 0.9f)
+
+            float dot = Vector3.Dot(this.transform.forward, other.transform.Find("Main Camera").forward);
+            if (!hit)
+            {
+                //Debug.Log("Distance: " + distance);
+                //Debug.Log("Dot: " + dot);
+            }
+            if (distance > 0.1f)
             {
                 return;
             }
-            float dot = Vector3.Dot(this.transform.forward, other.transform.Find("Main Camera").forward);
-            //Debug.Log("Dot: " + dot);
 
             //if (other.transform.rotation == TargetAngle)
             if (dot >= 0.995)
             {
+                hit = true;
                 //Debug.Log("Hit");
                 manager.TargetHit(other.gameObject);
             }
