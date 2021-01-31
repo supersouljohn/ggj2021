@@ -45,16 +45,16 @@ public class PerspectiveTarget : MonoBehaviour
             float dot = Vector3.Dot(this.transform.forward, other.transform.Find("Main Camera").forward);
             if (!hit)
             {
-                //Debug.Log("Distance: " + distance);
-                //Debug.Log("Dot: " + dot);
+                Debug.Log("Distance: " + distance);
+                Debug.Log("Dot: " + dot);
             }
-            if (distance > 0.1f)
+            if (distance > 0.12f)
             {
                 return;
             }
 
             //if (other.transform.rotation == TargetAngle)
-            if (dot >= 0.995)
+            if (dot >= 0.90)
             {
                 hit = true;
                 //Debug.Log("Hit");
