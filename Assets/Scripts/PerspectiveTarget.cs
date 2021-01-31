@@ -13,6 +13,10 @@ public class PerspectiveTarget : MonoBehaviour
         manager = this.transform.root.GetComponent<TargetManager>();
     }
 
+    private void Update()
+    {
+        Debug.DrawLine(this.transform.position, this.transform.position + (this.transform.forward * 5), Color.white);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,7 +33,19 @@ public class PerspectiveTarget : MonoBehaviour
         //Debug.Log(other.transform.rotation);
         if (other.name.Equals("Player"))
         {
-            if (other.transform.rotation == TargetAngle)
+            Debug.DrawLine(other.transform.position, other.transform.position + (other.transform.forward * 5), Color.blue);
+
+            float distance = (this.transform.position - other.transform.position).magnitude;
+            //Debug.Log("Distance: " + distance);
+            if (distance > 0.9f)
+            {
+                return;
+            }
+            float dot = Vector3.Dot(this.transform.forward, other.transform.forward);
+            //Debug.Log("Dot: " + dot);
+
+            //if (other.transform.rotation == TargetAngle)
+            if (dot >= 0.995)
             {
                 //Debug.Log("Hit");
                 manager.TargetHit(other.gameObject);

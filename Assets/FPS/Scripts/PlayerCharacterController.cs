@@ -277,7 +277,7 @@ public class PlayerCharacterController : MonoBehaviour
                 targetVelocity = GetDirectionReorientedOnSlope(targetVelocity.normalized, m_GroundNormal) * targetVelocity.magnitude;
 
                 // smoothly interpolate between our current velocity and the target velocity based on acceleration speed
-                characterVelocity = Vector3.Lerp(characterVelocity, targetVelocity, movementSharpnessOnGround * Time.deltaTime);
+                characterVelocity = targetVelocity; //Vector3.Lerp(characterVelocity, targetVelocity, movementSharpnessOnGround * Time.deltaTime);
 
                 // jumping
                 if (isGrounded && m_InputHandler.GetJumpInputDown())
