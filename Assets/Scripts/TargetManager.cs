@@ -44,6 +44,7 @@ public class TargetManager : MonoBehaviour
         Vector3 playerstartposition = player.transform.position;
 
         //Play sound
+        this.GetComponent<AudioSource>().Play();
 
         do
         {
