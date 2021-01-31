@@ -3518,26 +3518,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
-        type: 3}
-      propertyPath: gravityDownForce
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
-        type: 3}
-      propertyPath: maxSpeedOnGround
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
-        type: 3}
-      propertyPath: movementSharpnessOnGround
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3122855503829242450, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: m_StepOffset

@@ -565,12 +565,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   groundCheckDistance: 1
-  maxSpeedOnGround: 13
-  movementSharpnessOnGround: 15
+  maxSpeedOnGround: 3
+  movementSharpnessOnGround: 5
   maxSpeedCrouchedRatio: 0.5
-  maxSpeedInAir: 10
+  maxSpeedInAir: 2
   accelerationSpeedInAir: 25
-  sprintSpeedModifier: 1.5
+  sprintSpeedModifier: 3
   killHeight: -50
   rotationSpeed: 200
   aimingRotationMultiplier: 0.4
