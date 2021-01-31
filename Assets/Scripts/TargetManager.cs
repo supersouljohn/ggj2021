@@ -40,7 +40,7 @@ public class TargetManager : MonoBehaviour
             startcolors[i] = TargetGameObjects[i].material.color;
         }
 
-        Quaternion playerstartrotation = player.transform.rotation;
+        Quaternion playerstartrotation = player.transform.Find("Main Camera").rotation;
         Vector3 playerstartposition = player.transform.position;
 
         //Play sound
@@ -57,7 +57,7 @@ public class TargetManager : MonoBehaviour
             //Debug.Log(delayprogress);
 
             player.transform.position = Vector3.Lerp(playerstartposition, this.transform.position, delayprogress);
-            player.transform.rotation = Quaternion.Lerp(playerstartrotation, this.transform.rotation, delayprogress);
+            player.transform.Find("Main Camera").rotation = Quaternion.Lerp(playerstartrotation, this.transform.rotation, delayprogress);
             yield return null;
         } while (delayprogress < 1);
 
