@@ -7,6 +7,9 @@ public class PerspectiveTarget : MonoBehaviour
     Quaternion TargetAngle;
     TargetManager manager;
 
+    public float distancevalue = 0.12f;
+    public float dotvalue = 0.985f;
+
     private void Awake()
     {
         TargetAngle = this.transform.root.transform.rotation;
@@ -48,13 +51,13 @@ public class PerspectiveTarget : MonoBehaviour
                 Debug.Log("Distance: " + distance);
                 Debug.Log("Dot: " + dot);
             }
-            if (distance > 0.12f)
+            if (distance > distancevalue)
             {
                 return;
             }
 
             //if (other.transform.rotation == TargetAngle)
-            if (dot >= 0.985)
+            if (dot >= dotvalue)
             {
                 hit = true;
                 //Debug.Log("Hit");
